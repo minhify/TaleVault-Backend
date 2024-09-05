@@ -1,31 +1,17 @@
-<<<<<<< HEAD
-# TaleVault-Backend
-=======
-# Project Công nghệ và Dịch vụ Web (CT313H)
+## TaleVault-Frontend
+### Overview 
+A web-based project is built to manage and display a diverse collection of stories, offering users an intuitive and immersive platform to explore, organize, and enjoy various narrative content.
 
-#### Backend
-
-Học kỳ 1, Năm học 2023-2024
-
-**MSSV 1** : B2005889
-
-**Họ tên SV 1**: Hồ Minh Nhựt
-
-**MSSV 2**: B2005843
-
-**Họ tên SV 2**: Nguyễn Duy Khang
-
-**Lớp học phần**: M02
-
-**Tên dự án**: Quản lý truyện
-
+### Team Members
+- Hồ Minh Nhựt (Kaito)
+- Nguyễn Thị Diễm My (Minhify)
 ---
 
-After pulling the backend code
+**After pulling the backend code**
+```sh
+npm install --save
+npm i knex mysql
+npm i express-session
+```
+**To start server, using command**: ``npm start ``
 
-- npm install --save
-- npm i knex mysql
-- npm i express-session
-
-* To start server, using command: npm start
->>>>>>> kaito
