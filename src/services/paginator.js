@@ -10,6 +10,7 @@ class Paginator {
         }
         this.offset = (this.page - 1) * this.limit;
         }
+
         getMetadata(totalRecords) {
         if (totalRecords === 0) {
             return {};
