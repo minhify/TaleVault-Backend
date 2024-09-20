@@ -4,6 +4,7 @@ const servicesRouter = require('./routes/services.router');
 const usersRouter = require('./routes/user.router');
 const typeRouter = require('./routes/type.router');
 const session = require('express-session');
+
 const app = express();
 
 const {
@@ -13,6 +14,8 @@ const {
 
 const { SESSION_SECRET } = process.env;
 const multer = require('multer');
+const { swaggerUi, specs } = require('./docs/swagger');
+const swaggerJSDoc = require('swagger-jsdoc');
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -25,7 +28,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage})
 
-
 app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
@@ -36,15 +38,12 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.get('/', (req, res) => {
     res.json({ message: 'Welcome to our page.' });
 });
 
 // apply sesstion to app
 app.use(session({secret: SESSION_SECRET, resave: true, saveUninitialized: true}));
-
-
 
 // apply service router
 app.use('/api/services', servicesRouter);
@@ -58,6 +57,8 @@ app.use('/api/type', typeRouter);
 app.use('/api/upload', upload.single('file'), (req, res) => {
   console.log(req.file)
 });
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 // Handle 404 response 
 app.use(resourceNotFound);
