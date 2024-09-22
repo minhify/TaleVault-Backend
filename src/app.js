@@ -58,7 +58,7 @@ app.use('/api/upload', upload.single('file'), (req, res) => {
   console.log(req.file)
 });
 
-app.use('/api-docs', swaggerUi.serve, swaggerJSDoc.setup(specs));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 // Handle 404 response 
 app.use(resourceNotFound);

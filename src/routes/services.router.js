@@ -1,12 +1,7 @@
-
 const express = require('express');
 const servicesController = require('../controllers/services.controller');
 const { methodNotAllowed } = require('../controllers/errors.controller');
 const router = express.Router();
-
-
-module.exports.setup = (app) => {
-    app.use('/api/v1/books', router);
 
 /**
  * @swagger
@@ -178,4 +173,4 @@ router
     .delete(servicesController.deleteBook)
     .all(methodNotAllowed);
 
-module.exports = router; }
+module.exports = router;
