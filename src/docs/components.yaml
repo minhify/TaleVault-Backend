@@ -5,12 +5,12 @@ components:
       properties:
         id:
           type: integer
-          readOnly: true # Returned by HTTP GET 
+          readOnly: true # Returned by HTTP GET
         name:
           type: string
           description: book name
         author:
-          type: string 
+          type: string
           description: book author
         abstract:
           type: string
@@ -53,19 +53,36 @@ components:
         name:
           type: string
           description: "The name of the role, such as 'Admin' or 'User'."
-      required:      
+      required:
         - role_id
         - name
 
     Type:
-        type: object
-        properties:
-          type_id:
-            type: string
-            description: "A unique identifier for the book type, such as 'FIC' for Fiction."
-          name:
-            type: string
-            description: "The name of the book type, such as 'Fiction' or 'Non-fiction'."
-        required:         
-          - type_id
-          - name
+      type: object
+      properties:
+        type_id:
+          type: string
+          description: "A unique identifier for the book type, such as 'FIC' for Fiction."
+        name:
+          type: string
+          description: "The name of the book type, such as 'Fiction' or 'Non-fiction'."
+      required:
+        - type_id
+        - name
+        
+    Session:
+      type: object
+      properties:
+        sessionId:
+          type: string
+          description: "The session identifier"
+        user:
+          $ref: "#/components/schemas/User"
+        createdAt:
+          type: string
+          format: date-time
+          description: "The timestamp when the session was created"
+        expiresAt:
+          type: string
+          format: date-time
+          description: "The timestamp when the session expires"
