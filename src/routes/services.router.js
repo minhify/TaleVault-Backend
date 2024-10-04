@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /api/v1/books:
+ * /api/services:
  *   get:
  *     summary: Get books by filter
  *     description: Retrieve a list of books filtered by name or author
@@ -96,7 +96,7 @@ router
 
 /**
  * @swagger
- * /api/v1/books/{id}:
+ * /api/services/{id}:
  *   get:
  *     summary: Get a book by ID
  *     description: Retrieve details of a book by its ID

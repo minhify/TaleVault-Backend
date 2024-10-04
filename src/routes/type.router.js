@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /api/v1/booktypes:
+ *  /api/type:
  *   get:
  *     summary: Get all book types
  *     description: Retrieve a list of all available book types
@@ -38,7 +38,7 @@ router
 
 /**
  * @swagger
- * /api/v1/booktypes/{id}:
+ * /api/type/{id}:
  *   get:
  *     summary: Get a book type by ID
  *     description: Retrieve details of a specific book type by its ID

@@ -6,10 +6,21 @@ const router = express.Router();
 
 /**
  * @swagger
- * /api/v1/users:
+ * /api/user:
  *   get:
  *     summary: User login
  *     description: User login by providing credentials
+ *     parameters:
+ *       - in: query
+ *         name: username
+ *         schema:
+ *           type: string
+ *         description: Enter username
+ *       - in: query
+ *         name: password
+ *         schema:
+ *           type: string
+ *         description: Entern password
  *     tags:
  *       - users
  *     responses:
@@ -37,7 +48,7 @@ router
 
 /**
  * @swagger
- * /api/v1/users/logout:
+ * /api/user/logout:
  *   get:
  *     summary: User logout
  *     description: Logs out the user by ending their session
@@ -63,7 +74,7 @@ router
 
 /**
  * @swagger
- * /api/v1/users/session:
+ * /api/user/session:
  *   get:
  *     summary: Get user session
  *     description: Retrieves the current user session details

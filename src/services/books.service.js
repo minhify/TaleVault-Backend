@@ -44,7 +44,7 @@ function makeBookService (){
 
     //define function to get many books by filter 
     async function getManyBooks(query) {
-        const { name, author, typeid, id, type, page = 1, limit = 6 } = query;
+        const { name, author, typeid, id, type, page = 1, limit = 10 } = query;
         const paginator = new Paginator(page, limit);
 
         let queryBuilder = knex('BOOKS')
@@ -76,7 +76,7 @@ function makeBookService (){
                     builder.where('TYPE.name','like',  `%${type}%`);
                 }
 
-            })
+            });
         
         if(Object.keys(query).length!==0&&!name) {
             queryBuilder = queryBuilder.limit(paginator.limit).offset(paginator.offset);
